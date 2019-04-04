@@ -1,5 +1,13 @@
 import express from 'express';
+import { connectToDb } from './startup/db';
+import { winstonLogger } from './startup/winstonLogger';
 
-const app = express();
+const start = async () => {
+  await connectToDb();
+  const app = express();
 
-app.listen(3000, () => console.log('hi there'));
+  const PORT = process.env.PORT || 3000;
+  app.listen(3000, () => winstonLogger.info(`Listening to PORT:${PORT}`));
+};
+
+start();

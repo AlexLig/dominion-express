@@ -20,4 +20,7 @@ export interface ITurn {
   actionPoints: number;
   buyPoints: number;
   treasurePoints: number;
+  phase: GamePhase;
 }
+
+type GamePhase = 'ACTION' | 'BUY' | 'TREASURE';

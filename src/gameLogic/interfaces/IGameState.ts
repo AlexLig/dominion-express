@@ -1,26 +1,22 @@
+import { Card, TurnPhase } from '../types';
+
 export interface IGameState {
-  currentPlayer: string;
   players: IPlayer[];
   turn: ITurn;
-  cards: ICard[];
-  discarded: ICard[];
+  cards: Card[];
+  trash: Card[];
 }
 export interface IPlayer {
   name: string;
-  hand: ICard[];
-  deck: ICard[];
-}
-export interface ICard {
-  name: string;
-  type: string;
-  cost: number;
-  description: string;
+  isHisTurn: boolean;
+  hand: Card[];
+  deck: Card[];
+  discard: Card[];
+  played: Card[];
 }
 export interface ITurn {
   actionPoints: number;
   buyPoints: number;
   treasurePoints: number;
-  phase: GamePhase;
+  phase: TurnPhase;
 }
-
-type GamePhase = 'ACTION' | 'BUY' | 'TREASURE';

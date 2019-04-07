@@ -1,8 +1,7 @@
 import { IPlayer } from '../interfaces/IGameState';
 import { access } from 'fs';
 
-export const effectOnActivePlayer = (
-  players: IPlayer[],
+export const effectOnPlayerFromPlayers = (players: IPlayer[]) => (
   effect: (pl: IPlayer) => IPlayer,
 ): IPlayer[] => {
   const activePlayer = players.find(pl => pl.isHisTurn === true);

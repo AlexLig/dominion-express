@@ -5,5 +5,5 @@ export const effectOnPlayerFromPlayers = (players: IPlayer[]) => (
   const activePlayer = players.find(pl => pl.isHisTurn === true);
   const restPlayers = players.filter(pl => pl.isHisTurn === false);
 
-  return [...restPlayers, effect(activePlayer)];
+  return [...restPlayers, effect(activePlayer!)];
 };

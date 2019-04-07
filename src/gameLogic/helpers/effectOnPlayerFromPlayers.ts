@@ -1,6 +1,4 @@
 import { IPlayer } from '../interfaces/IGameState';
-import { access } from 'fs';
-
 export const effectOnPlayerFromPlayers = (players: IPlayer[]) => (
   effect: (pl: IPlayer) => IPlayer,
 ): IPlayer[] => {

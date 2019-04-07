@@ -1,9 +1,7 @@
 import { IGameState } from '../interfaces/IGameState';
-import { drawCardsFromDeck } from '../effects/drawCards';
+import { drawCards } from '../effects/drawCards';
+import { effectOnActivePlayer } from '../helpers/effectOnActivePlayer';
 
 export const playSmithy = (state: IGameState): IGameState => {
-  const activePlayer = state.players.find(pl => pl.isHisTurn === true);
-  const restPlayers = state.players.filter(pl => pl.isHisTurn === false);
-  drawCardsFromDeck(activePlayer, 3);
-  return { ...state, players: [...restPlayers, activePlayer] };
+  return { ...state, players: effectOnActivePlayer(state.players, drawCards(3)) };
 };

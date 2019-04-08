@@ -13,6 +13,6 @@ const playTreasure = (amount: number) => (
 
   return { ...state, treasurePoints, players };
 };
-export const playGold = playTreasure(3);
-export const playSilver = playTreasure(2);
-export const playCopper = playTreasure(1);
+export const gold = playTreasure(3);
+export const silver = playTreasure(2);
+export const copper = playTreasure(1);

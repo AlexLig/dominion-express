@@ -1,20 +1,22 @@
 import { IGameState } from './interfaces/IGameState';
 import { IAction } from './interfaces/IAction';
-import { playGold, playSilver, playCopper } from './cards/treasureCards';
-import { playSmithy } from './cards/smithy';
+import { gold, silver, copper } from './cards/treasureCards';
+import { smithy } from './cards/smithy';
+import { getPlayCardReducer } from './helpers/getPlayCardReducer';
 
 export const reducer = (state: IGameState, action: IAction) => {
+  const playCard = getPlayCardReducer(state, action);
   switch (action.type) {
     case 'PLAY_GOLD':
-      return playGold(state, action);
+      return playCard(gold);
     case 'PLAY_SILVER':
-      return playSilver(state, action);
+      return playCard(silver);
 
     case 'PLAY_COPPER':
-      return playCopper(state, action);
+      return playCard(copper);
 
     case 'PLAY_SMITHY':
-      return playSmithy(state, action);
+      return playCard(smithy);
 
     default:
       return state;

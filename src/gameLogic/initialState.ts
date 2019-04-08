@@ -2,7 +2,7 @@ import { IGameState, IPlayer } from './interfaces/IGameState';
 import { Card } from './types';
 const cardPile: Card[] = ['GOLD', 'SILVER', 'COPPER', 'SMITHY'];
 const createPlayer = ({
-  name = 'robot',
+  name = 'OOOOOO',
   isHisTurn = false,
   hand = cardPile,
   deck = cardPile,
@@ -18,7 +18,7 @@ const createPlayer = ({
 });
 
 const players: IPlayer[] = [
-  createPlayer({ isHisTurn: true }),
+  createPlayer({ isHisTurn: true, name: '~ACTIVE~' }),
   createPlayer({}),
   createPlayer({}),
   createPlayer({}),

@@ -3,8 +3,9 @@ import { IAction } from './interfaces/IAction';
 import { gold, silver, copper } from './cards/treasureCards';
 import { smithy } from './cards/smithy';
 import { getPlayCardReducer } from './helpers/getPlayCardReducer';
+import { dummyState } from './initialState';
 
-export const reducer = (state: IGameState, action: IAction) => {
+export const DominionReducer = (state: IGameState = dummyState, action: IAction) => {
   const playCard = getPlayCardReducer(state, action);
   switch (action.type) {
     case 'PLAY_GOLD':

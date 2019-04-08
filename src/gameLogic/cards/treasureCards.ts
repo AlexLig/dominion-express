@@ -1,5 +1,4 @@
-import { IGameState, ITurn } from '../interfaces/IGameState';
-import { addTreasure } from '../effects/addTreasure';
+import { IGameState } from '../interfaces/IGameState';
 import { IAction } from '../interfaces/IAction';
 import { moveFromHandToPlayed } from '../effects/moveFromHandToPlayed';
 import { effectOnPlayerFromPlayers } from '../helpers/effectOnPlayerFromPlayers';
@@ -9,9 +8,10 @@ const playTreasure = (amount: number) => (
   action: IAction,
 ): IGameState => {
   const effectOnPlayer = effectOnPlayerFromPlayers(state.players);
-  const turn: ITurn = addTreasure(state.turn, amount);
   const players = effectOnPlayer(moveFromHandToPlayed(action.cardName));
-  return { ...state, turn, players };
+  const treasurePoints = state.treasurePoints + amount;
+
+  return { ...state, treasurePoints, players };
 };
 export const playGold = playTreasure(3);
 export const playSilver = playTreasure(2);

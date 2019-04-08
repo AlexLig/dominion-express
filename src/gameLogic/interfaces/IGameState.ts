@@ -2,7 +2,10 @@ import { Card, TurnPhase } from '../types';
 
 export interface IGameState {
   players: IPlayer[];
-  turn: ITurn;
+  actionPoints: number;
+  buyPoints: number;
+  treasurePoints: number;
+  phase: TurnPhase;
   cards: Card[];
   trash: Card[];
 }
@@ -13,10 +16,4 @@ export interface IPlayer {
   deck: Card[];
   discard: Card[];
   played: Card[];
-}
-export interface ITurn {
-  actionPoints: number;
-  buyPoints: number;
-  treasurePoints: number;
-  phase: TurnPhase;
 }

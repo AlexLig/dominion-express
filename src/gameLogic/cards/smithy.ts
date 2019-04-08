@@ -5,5 +5,7 @@ import { IAction } from '../interfaces/IAction';
 
 export const playSmithy = (state: IGameState, action: IAction): IGameState => {
   const effectOnPlayer = effectOnPlayerFromPlayers(state.players);
-  return { ...state, players: effectOnPlayer(drawCards(3)) };
+  const players = effectOnPlayer(drawCards(3));
+  const actionPoints = state.actionPoints - 1;
+  return { ...state, players, actionPoints };
 };

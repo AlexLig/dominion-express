@@ -1,7 +1,7 @@
-import { Card, TurnPhase } from '../types';
+import { Card, TurnPhase, ActionType } from '../types';
 
 export interface IAction {
-  type: string;
+  type: ActionType;
   cardName: Card;
   cardPhase: TurnPhase;
 }

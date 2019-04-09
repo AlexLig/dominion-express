@@ -1,9 +1,9 @@
-import { IGameState } from './interfaces/IGameState';
-import { IAction } from './interfaces/IAction';
-import { gold, silver, copper } from './cards/treasureCards';
-import { smithy } from './cards/smithy';
-import { getPlayCardReducer } from './helpers/getPlayCardReducer';
-import { dummyState } from './initialState';
+import { IGameState } from '../interfaces/IGameState';
+import { IAction } from '../interfaces/IAction';
+import { gold, silver, copper } from '../cards/treasureCards';
+import { smithy } from '../cards/smithy';
+import { getPlayCardReducer } from './getPlayCardReducer';
+import { dummyState } from '../initialState';
 
 export const DominionReducer = (state: IGameState = dummyState, action: IAction) => {
   const playCard = getPlayCardReducer(state, action);
@@ -18,6 +18,11 @@ export const DominionReducer = (state: IGameState = dummyState, action: IAction)
 
     case 'PLAY_SMITHY':
       return playCard(smithy);
+
+    case 'SET_ACTION_PHASE':
+    case 'SET_BUY_PHASE':
+    case 'SET_CLEANUP_PHASE':
+
 
     default:
       return state;

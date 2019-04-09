@@ -1,7 +1,7 @@
 import { IGameState } from '../interfaces/IGameState';
 import { IAction } from '../interfaces/IAction';
 import { moveFromHandToPlayed } from '../effects/moveFromHandToPlayed';
-import { effectOnPlayerFromPlayers } from '../helpers/effectOnPlayerFromPlayers';
+import { effectOnPlayerFromPlayers } from '../reducers/effectOnPlayerFromPlayers';
 
 const playTreasure = (amount: number) => (
   state: IGameState,

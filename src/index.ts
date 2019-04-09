@@ -1,4 +1,4 @@
-import { DominionReducer } from './gameLogic/reducer';
+import { DominionReducer } from './gameLogic/reducers/reducer';
 import { createStore, applyMiddleware } from 'redux';
 import {
   playCopperAction,

@@ -1,17 +1,18 @@
 import { DominionReducer } from './gameLogic/reducer';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import {
   playCopperAction,
   playGoldAction,
   playSilverAction,
   playSmithyAction,
 } from './gameLogic/actions/playActions';
+import { logger } from './logger';
 
 const store = createStore(DominionReducer);
 
-console.log(store.getState());
+logger.info(store.getState());
 
-const unsubscribe = store.subscribe(() => console.log(store.getState()));
+const unsubscribe = store.subscribe(() => logger.info(store.getState()));
 
 store.dispatch(playCopperAction());
 store.dispatch(playGoldAction());

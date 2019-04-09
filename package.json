@@ -10,12 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/winston": "^2.4.4",
     "express": "^4.16.4",
-    "jest": "^24.7.0",
     "redux": "^4.0.1",
-    "typescript": "^3.4.1"
+    "typescript": "^3.4.1",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
+    "jest": "^24.7.0",
     "@types/express": "^4.16.1",
     "@types/jest": "^24.0.11",
     "@types/redux": "^3.6.0",

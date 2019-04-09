@@ -1,5 +1,5 @@
 export type Card = 'GOLD' | 'SILVER' | 'COPPER' | 'SMITHY';
-export type TurnPhase = 'ACTION' | 'BUY';
+export type TurnPhase = 'ACTION' | 'BUY' | 'CLEANUP';
 export type ActionType =
   | 'PLAY_GOLD'
   | 'PLAY_SILVER'

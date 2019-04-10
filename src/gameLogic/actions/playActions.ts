@@ -4,17 +4,17 @@ import { Action } from '../types';
 export const playGoldAction = (): Action => ({
   type: 'PLAY_GOLD',
   cardName: 'GOLD',
-  cardPhase: 'BUY',
+  cardPhase: 'COIN',
 });
 export const playSilverAction = (): Action => ({
   type: 'PLAY_SILVER',
   cardName: 'SILVER',
-  cardPhase: 'BUY',
+  cardPhase: 'COIN',
 });
 export const playCopperAction = (): Action => ({
   type: 'PLAY_COPPER',
   cardName: 'COPPER',
-  cardPhase: 'BUY',
+  cardPhase: 'COIN',
 });
 export const playSmithyAction = (): Action => ({
   type: 'PLAY_SMITHY',

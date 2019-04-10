@@ -12,5 +12,6 @@ export const setCleanUpPhase = (state: IGameState, action: IAction): IGameState 
   const actionPoints = 1;
   const buyPoints = 1;
   const treasurePoints = 0;
-  return { ...state, actionPoints, buyPoints, treasurePoints, players };
+  const phase = 'ACTION';
+  return { ...state, actionPoints, buyPoints, treasurePoints, players, phase };
 };

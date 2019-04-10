@@ -18,10 +18,10 @@ const createPlayer = ({
 });
 
 const players: IPlayer[] = [
-  createPlayer({ isHisTurn: true, name: '~ACTIVE~' }),
-  createPlayer({}),
-  createPlayer({}),
-  createPlayer({}),
+  createPlayer({ isHisTurn: true, name: '~PLAYER1~' }),
+  createPlayer({ name: '~PLAYER2~' }),
+  createPlayer({ name: '~PLAYER3~' }),
+  createPlayer({ name: '~PLAYER4~' }),
 ];
 
 export const dummyState: IGameState = {

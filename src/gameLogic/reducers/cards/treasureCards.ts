@@ -8,7 +8,7 @@ const playTreasure = (amount: number) => (
   action: IAction,
 ): IGameState => {
   const effectOnPlayer = getApplyEffectsOnActive(state.players);
-  const players = effectOnPlayer(moveFromHandToPlayed(action.cardName));
+  const players = effectOnPlayer(moveFromHandToPlayed(action.cardName!));
   const treasurePoints = state.treasurePoints + amount;
 
   return { ...state, treasurePoints, players };

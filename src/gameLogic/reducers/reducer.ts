@@ -6,7 +6,10 @@ import { getPlayCardReducer } from './getPlayCardReducer';
 import { dummyState } from '../initialState';
 import { setCleanUpPhase } from './setCleanUpPhase';
 
-export const DominionReducer = (state: IGameState = dummyState, action: IAction) => {
+export const DominionReducer = (
+  state: IGameState = dummyState,
+  action: IAction,
+): IGameState => {
   const playCard = getPlayCardReducer(state, action);
   switch (action.type) {
     case 'PLAY_GOLD':

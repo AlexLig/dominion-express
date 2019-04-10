@@ -1,3 +1,5 @@
+import { IPlayer } from './interfaces/IGameState';
+
 export type Card = 'GOLD' | 'SILVER' | 'COPPER' | 'SMITHY';
 export type TurnPhase = 'ACTION' | 'COIN' | 'BUY' | 'CLEANUP';
 export type ActionType =
@@ -30,3 +32,5 @@ export type Action =
       cardName: 'SMITHY';
       cardPhase: 'ACTION';
     };
+
+export type Effect = (pl: IPlayer) => IPlayer;

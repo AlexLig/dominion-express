@@ -1,6 +1,6 @@
 import { IPlayer } from '../interfaces/IGameState';
 
-export const drawCards = (numberOfCards: number) => (player: IPlayer): IPlayer => {
+export const tryToDrawCards = (numberOfCards: number) => (player: IPlayer): IPlayer => {
   const drawnCards = player.deck.slice(-numberOfCards);
   const remainingCardsInDeck =
     player.deck.length < numberOfCards

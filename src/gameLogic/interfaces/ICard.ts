@@ -6,5 +6,5 @@ export interface ICard {
   name: CardName;
   cost: number;
   type: CardType;
-  reducer?: (s: IGameState, a: IAction) => IGameState;
+  reducer: (s: IGameState, a: IAction) => IGameState;
 }

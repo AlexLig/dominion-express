@@ -3,9 +3,16 @@ import { ICard } from './interfaces/ICard';
 
 export type CardList = { [key in CardName]: ICard };
 export type Effect = (pl: IPlayer) => IPlayer;
-export type CardName = 'GOLD' | 'SILVER' | 'COPPER' | 'SMITHY';
 export type CardType = 'ACTION' | 'TREASURE' | 'VICTORY';
 export type TurnPhase = 'ACTION' | 'COIN' | 'BUY' | 'CLEANUP';
+export type CardName =
+  | 'GOLD'
+  | 'SILVER'
+  | 'COPPER'
+  | 'SMITHY'
+  | 'ESTATE'
+  | 'PROVINCE'
+  | 'DUCHY';
 export type ActionType =
   | 'PLAY_CARD'
   | 'BUY_CARD'

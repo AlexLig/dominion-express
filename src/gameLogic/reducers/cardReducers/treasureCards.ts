@@ -2,11 +2,9 @@ import { IGameState } from '../../interfaces/IGameState';
 import { IAction } from '../../interfaces/IAction';
 import { moveFromHandToPlayed } from '../../effects/moveFromHandToPlayed';
 import { getApplyEffectsOnActive } from '../getApplyEffectsOnActive';
+import { Activate } from '../../types';
 
-const playTreasure = (amount: number) => (
-  state: IGameState,
-  action: IAction,
-): IGameState => {
+const playTreasure = (amount: number): Activate<IGameState> => state => {
   const treasurePoints = state.treasurePoints + amount;
   return { ...state, treasurePoints };
 };

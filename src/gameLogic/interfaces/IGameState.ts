@@ -1,6 +1,7 @@
 import { CardName, TurnPhase } from '../types';
 
 export interface IGameState {
+  winner: IPlayer | undefined;
   players: IPlayer[];
   actionPoints: number;
   buyPoints: number;
@@ -16,4 +17,5 @@ export interface IPlayer {
   deck: CardName[];
   discard: CardName[];
   played: CardName[];
+  victoryPoints: number;
 }

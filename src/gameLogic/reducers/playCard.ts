@@ -29,5 +29,5 @@ export const playCard = (state: IGameState, action: IAction): IGameState => {
   const effectOnPlayer = getApplyEffectsOnActive(state.players);
   const players = effectOnPlayer(moveFromHandToPlayed(card.name));
 
-  return card.reducer({ ...state, players }, action);
+  return card.activate({ ...state, players });
 };

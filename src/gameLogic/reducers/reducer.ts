@@ -4,6 +4,7 @@ import { playCard } from './playCard';
 import { buyCard } from './buyCard';
 import { setCleanUpPhase } from './setCleanUpPhase';
 import { dummyState } from '../initialState';
+import { findWinner } from './findWinner';
 
 export const DominionReducer = (
   state: IGameState = dummyState,
@@ -22,6 +23,8 @@ export const DominionReducer = (
       return { ...state, phase: 'BUY' };
     case 'SET_CLEANUP_PHASE':
       return setCleanUpPhase(state, action);
+    case 'FIND_WINNER':
+      return findWinner(state, action);
 
     default:
       return state;

@@ -10,12 +10,14 @@ export const getPlayCardReducer = (state: IGameState, action: IAction) => (
   cardReducer: (state: IGameState, action: IAction) => IGameState,
 ): IGameState => {
   const activePlayer = state.players.find(pl => pl.isHisTurn === true);
-  if (!activePlayer) throw new Error('players.find activePlayer not found!');
-  const hasTheCard = activePlayer.hand.includes(action.cardName!);
 
-  const isTheRightTurnPhase = state.phase === action.cardPhase;
-  let canBePlayed = hasTheCard && isTheRightTurnPhase;
-  if (action.cardPhase === 'ACTION' && state.actionPoints <= 0) canBePlayed = false;
+  if (!activePlayer) return state;
 
-  return canBePlayed ? cardReducer(state, action) : state;
+  if (!activePlayer.hand.includes(action.cardName!)) return state;
+
+  if (state.phase !== action.cardPhase) return state;
+
+  if (action.cardPhase === 'ACTION' && state.actionPoints <= 0) return state;
+
+  return cardReducer(state, action);
 };

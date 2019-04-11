@@ -11,7 +11,7 @@ import { getPhaseFromCard } from '../helpers/getPhaseFromCard';
  */
 export const playCard = (state: IGameState, action: IAction): IGameState => {
   const { card } = action;
-  if (!card) return state;
+  if (!card || !card.reducer) return state;
 
   const activePlayer = state.players.find(pl => pl.isHisTurn === true);
 

@@ -7,9 +7,7 @@ export const getApplyEffectsOnActive = (players: IPlayer[]) => (
   if (!activePlayer) return players;
   const restPlayers = players.filter(pl => pl.isHisTurn === false);
 
-  const affectedPlayer = effects
-    .map(ef => ef(activePlayer))
-    .reduce((acc, val) => ({ ...acc, ...val }));
+  const affectedPlayer = effects.reduce((pl, ef) => ef(pl), activePlayer);
 
   return [...restPlayers, affectedPlayer];
 };

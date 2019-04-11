@@ -14,14 +14,14 @@ export const findWinner = (state: IGameState, action: IAction): IGameState => {
 
 const resolveVictoryCardsToPlayer = (player: IPlayer): IPlayer => {
   const { deck, hand, discard, played } = player;
+
   const allCards: CardName[] = [...deck, ...hand, ...discard, ...played];
   const victoryCards: CardName[] = allCards.filter(c => cards[c].type === 'VICTORY');
-  const resolvedPlayer: IPlayer = victoryCards
-    .map(c => cards[c].activate(player))
-    .reduce((acc, val) => ({
-      ...acc,
-      ...val,
-      victoryPoints: acc.victoryPoints + val.victoryPoints,
-    }));
+
+  const resolvedPlayer: IPlayer = victoryCards.reduce(
+    (p, c) => cards[c].activate(p),
+    player,
+  );
+
   return resolvedPlayer;
 };

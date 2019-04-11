@@ -15,6 +15,7 @@ const createPlayer = ({
   deck,
   discard,
   played,
+  victoryPoints: 0,
 });
 
 const players: IPlayer[] = [
@@ -32,4 +33,5 @@ export const dummyState: IGameState = {
   trash: [],
   phase: 'BUY',
   players,
+  winner: undefined,
 };

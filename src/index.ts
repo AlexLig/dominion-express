@@ -1,6 +1,6 @@
 import { DominionReducer } from './gameLogic/reducers/reducer';
 import { createStore, applyMiddleware } from 'redux';
-import { playCardAction } from './gameLogic/actions/playActions';
+import { playCardAction } from './gameLogic/actions/actionCreators';
 import { logger } from './logger';
 import { cards } from './cardList';
 

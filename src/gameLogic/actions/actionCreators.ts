@@ -5,3 +5,7 @@ export const playCardAction = (card: ICard): IAction => ({
   type: 'PLAY_CARD',
   card,
 });
+export const buyCardAction = (card: ICard): IAction => ({
+  type: 'BUY_CARD',
+  card,
+});

@@ -7,10 +7,6 @@ export type CardName = 'GOLD' | 'SILVER' | 'COPPER' | 'SMITHY';
 export type CardType = 'ACTION' | 'TREASURE' | 'VICTORY';
 export type TurnPhase = 'ACTION' | 'COIN' | 'BUY' | 'CLEANUP';
 export type ActionType =
-  | 'PLAY_GOLD'
-  | 'PLAY_SILVER'
-  | 'PLAY_COPPER'
-  | 'PLAY_SMITHY'
   | 'PLAY_CARD'
   | 'BUY_CARD'
   | 'SET_ACTION_PHASE'

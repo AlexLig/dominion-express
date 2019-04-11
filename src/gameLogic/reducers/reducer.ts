@@ -1,7 +1,7 @@
 import { IGameState } from '../interfaces/IGameState';
 import { IAction } from '../interfaces/IAction';
-import { gold, silver, copper } from './cards/treasureCards';
-import { smithy } from './cards/smithy';
+import { gold, silver, copper } from './cardReducers/treasureCards';
+import { smithy } from './cardReducers/smithy';
 import { getPlayCardReducer } from './getPlayCardReducer';
 import { dummyState } from '../initialState';
 import { setCleanUpPhase } from './setCleanUpPhase';

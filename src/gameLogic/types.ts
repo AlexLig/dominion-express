@@ -7,6 +7,7 @@ export type ActionType =
   | 'PLAY_SILVER'
   | 'PLAY_COPPER'
   | 'PLAY_SMITHY'
+  | 'BUY_CARD'
   | 'SET_ACTION_PHASE'
   | 'SET_BUY_PHASE'
   | 'SET_CLEANUP_PHASE'

@@ -5,6 +5,7 @@ import { smithy } from './cards/smithy';
 import { getPlayCardReducer } from './getPlayCardReducer';
 import { dummyState } from '../initialState';
 import { setCleanUpPhase } from './setCleanUpPhase';
+import { buyCard } from './buyCard';
 
 export const DominionReducer = (
   state: IGameState = dummyState,
@@ -22,6 +23,9 @@ export const DominionReducer = (
 
     case 'PLAY_SMITHY':
       return playCard(smithy);
+
+    case 'BUY_CARD':
+      return buyCard(state, action);
 
     case 'SET_ACTION_PHASE':
       return { ...state, phase: 'ACTION' };

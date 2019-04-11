@@ -4,4 +4,5 @@ export interface IAction {
   type: ActionType;
   cardName?: Card;
   cardPhase?: TurnPhase;
+  cardCost?: number;
 }

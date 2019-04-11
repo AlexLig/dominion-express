@@ -1,6 +1,6 @@
 import { CardList } from './gameLogic/types';
 import { copper, silver, gold } from './gameLogic/reducers/cardReducers/treasureCards';
-import { smithy } from './gameLogic/reducers/cardReducers/smithy';
+import { smithy } from './gameLogic/reducers/cardReducers/actionCards';
 
 export const cards: CardList = {
   COPPER: { name: 'COPPER', cost: 0, type: 'TREASURE', activate: copper },

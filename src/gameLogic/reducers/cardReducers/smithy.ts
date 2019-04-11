@@ -6,10 +6,7 @@ import { moveFromHandToPlayed } from '../../effects/moveFromHandToPlayed';
 
 export const smithy = (state: IGameState, action: IAction): IGameState => {
   const effectOnPlayer = getApplyEffectsOnActive(state.players);
-  const players = effectOnPlayer(
-    tryToDrawCards(3),
-    moveFromHandToPlayed(action.cardName!),
-  );
+  const players = effectOnPlayer(tryToDrawCards(3));
   const actionPoints = state.actionPoints - 1;
   return { ...state, players, actionPoints };
 };

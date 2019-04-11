@@ -1,4 +1,4 @@
-import { Card, TurnPhase } from '../types';
+import { CardName, TurnPhase } from '../types';
 
 export interface IGameState {
   players: IPlayer[];
@@ -6,14 +6,14 @@ export interface IGameState {
   buyPoints: number;
   treasurePoints: number;
   phase: TurnPhase;
-  cards: Card[];
-  trash: Card[];
+  cards: CardName[];
+  trash: CardName[];
 }
 export interface IPlayer {
   name: string;
   isHisTurn: boolean;
-  hand: Card[];
-  deck: Card[];
-  discard: Card[];
-  played: Card[];
+  hand: CardName[];
+  deck: CardName[];
+  discard: CardName[];
+  played: CardName[];
 }

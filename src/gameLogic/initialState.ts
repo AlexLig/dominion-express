@@ -1,6 +1,6 @@
 import { IGameState, IPlayer } from './interfaces/IGameState';
-import { Card } from './types';
-const cardPile: Card[] = ['GOLD', 'SILVER', 'COPPER', 'SMITHY'];
+import { CardName } from './types';
+const cardPile: CardName[] = ['GOLD', 'SILVER', 'COPPER', 'SMITHY'];
 const createPlayer = ({
   name = 'OOOOOO',
   isHisTurn = false,

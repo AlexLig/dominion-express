@@ -4,7 +4,7 @@ export const getApplyEffectsOnActive = (players: IPlayer[]) => (
   ...effects: Effect[]
 ): IPlayer[] => {
   const activePlayer = players.find(pl => pl.isHisTurn === true);
-  if (!activePlayer) throw new Error('players.find activePlayer not found!');
+  if (!activePlayer) return players;
   const restPlayers = players.filter(pl => pl.isHisTurn === false);
 
   const affectedPlayer = effects

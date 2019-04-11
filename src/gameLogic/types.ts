@@ -1,9 +1,9 @@
 import { IPlayer } from './interfaces/IGameState';
 import { ICard } from './interfaces/ICard';
 
-export type CardList = { [key in Card]: ICard };
+export type CardList = { [key in CardName]: ICard };
 export type Effect = (pl: IPlayer) => IPlayer;
-export type Card = 'GOLD' | 'SILVER' | 'COPPER' | 'SMITHY';
+export type CardName = 'GOLD' | 'SILVER' | 'COPPER' | 'SMITHY';
 export type CardType = 'ACTION' | 'TREASURE' | 'VICTORY';
 export type TurnPhase = 'ACTION' | 'COIN' | 'BUY' | 'CLEANUP';
 export type ActionType =
@@ -11,29 +11,9 @@ export type ActionType =
   | 'PLAY_SILVER'
   | 'PLAY_COPPER'
   | 'PLAY_SMITHY'
+  | 'PLAY_CARD'
   | 'BUY_CARD'
   | 'SET_ACTION_PHASE'
   | 'SET_BUY_PHASE'
   | 'SET_CLEANUP_PHASE'
   | 'SET_COIN_PHASE';
-export type Action =
-  | {
-      type: 'PLAY_GOLD';
-      cardName: 'GOLD';
-      cardPhase: 'COIN';
-    }
-  | {
-      type: 'PLAY_SILVER';
-      cardName: 'SILVER';
-      cardPhase: 'COIN';
-    }
-  | {
-      type: 'PLAY_COPPER';
-      cardName: 'COPPER';
-      cardPhase: 'COIN';
-    }
-  | {
-      type: 'PLAY_SMITHY';
-      cardName: 'SMITHY';
-      cardPhase: 'ACTION';
-    };

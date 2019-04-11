@@ -1,5 +1,5 @@
-import { Card } from '../types';
+import { CardName } from '../types';
 
-export const addCard = (cardArray: Card[], card: Card): Card[] => {
+export const addCard = (cardArray: CardName[], card: CardName): CardName[] => {
   return [...cardArray, card];
 };

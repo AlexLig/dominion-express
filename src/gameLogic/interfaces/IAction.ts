@@ -1,8 +1,7 @@
-import { Card, TurnPhase, ActionType } from '../types';
+import { CardName, TurnPhase, ActionType } from '../types';
+import { ICard } from './ICard';
 
 export interface IAction {
   type: ActionType;
-  cardName?: Card;
-  cardPhase?: TurnPhase;
-  cardCost?: number;
+  card?: ICard;
 }

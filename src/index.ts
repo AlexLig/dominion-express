@@ -1,13 +1,21 @@
-import express from 'express';
-import { connectToDb } from './startup/db';
-import { winstonLogger } from './startup/winstonLogger';
+import { DominionReducer } from './gameLogic/reducers/reducer';
+import { createStore, applyMiddleware } from 'redux';
+import { playCardAction } from './gameLogic/actions/actionCreators';
+import { logger } from './logger';
+import { cards } from './cardList';
 
-const start = async () => {
-  await connectToDb();
-  const app = express();
+const store = createStore(DominionReducer);
 
-  const PORT = process.env.PORT || 3000;
-  app.listen(3000, () => winstonLogger.info(`Listening to PORT:${PORT}`));
-};
+logger.info(store.getState());
 
-start();
+const unsubscribe = store.subscribe(() => logger.info(store.getState()));
+
+store.dispatch({ type: 'SET_COIN_PHASE' });
+store.dispatch(playCardAction(cards.COPPER));
+store.dispatch(playCardAction(cards.SILVER));
+store.dispatch(playCardAction(cards.GOLD));
+store.dispatch({ type: 'SET_ACTION_PHASE' });
+store.dispatch(playCardAction(cards.SMITHY));
+store.dispatch({ type: 'SET_CLEANUP_PHASE' });
+
+unsubscribe();
